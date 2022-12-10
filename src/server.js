@@ -5,10 +5,13 @@ const PORT = 3001;
 
 const app = express();
 
-app.listen(PORT, () => {
-  console.log("Server started on port ", PORT, "!");
+//------------------Route----------------------------------
+app.get("/api", (req, res) => {
+  // res.render('api');
+  res.json({ users: ["userOne", "userTwo", "userThree", "userFour"] });
 });
 
-app.get("/api", (req, res) => {
-  res.json({ users: ["userOne", "userTwo", "userThree", "userFour"] });
+//------------IP => localhost:...--------------------------
+app.listen(PORT, () => {
+  console.log("Server started on port ", PORT, "!");
 });
