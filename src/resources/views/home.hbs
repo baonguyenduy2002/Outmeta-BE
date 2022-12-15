@@ -1,1 +1,11 @@
 <h1>HOME PAGE</h1>
+<div class="tag">
+    <div class="row" style="text-align: center;">
+        {{#each num}}
+        <h2>Users: {{this.userCount}}</h2>
+        <h2>Posts: {{this.postCount}}</h2>
+        <h2>Groups: {{this.groupCount}}</h2>
+        <h2>Topics: {{this.topicCount}}</h2>
+        {{/each}}
+    </div>
+</div>

@@ -29,7 +29,6 @@ User.getAll = (user_id, result) => {
   if (user_id) {
     query += ` WHERE user_id LIKE '%${user_id}%'`;
   }
-  console.log("querry: ", query);
   sql.query(query, (err, res) => {
     if (err) {
       console.log("error: ", err);
