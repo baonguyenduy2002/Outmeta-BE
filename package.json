@@ -2,11 +2,12 @@
   "name": "outmeta-be",
   "version": "1.0.0",
   "description": "For Database System lab",
-  "main": "server.js",
+  "main": "src/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./src/server.js",
-    "dev": "nodemon ./src/server.js"
+    "dev": "nodemon ./src/server.js",
+    "watch": "node-sass --watch src/resources/scss/app.scss src/public/css/app.css"
   },
   "repository": {
     "type": "git",
@@ -21,11 +22,18 @@
   "homepage": "https://github.com/baonguyenduy2002/Outmeta-BE#readme",
   "dependencies": {
     "axios": "^1.2.1",
+    "body-parser": "^1.20.1",
+    "bootstrap": "^5.2.3",
     "express": "^4.18.2",
+    "express-handlebars": "^6.0.6",
+    "method-override": "^3.0.0",
     "mysql": "^2.18.1",
-		"uuid": "^9.0.0"
+    "mysql2": "^2.3.3",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
+    "morgan": "^1.10.0",
+    "node-sass": "^8.0.0",
     "nodemon": "^2.0.20"
   }
 }

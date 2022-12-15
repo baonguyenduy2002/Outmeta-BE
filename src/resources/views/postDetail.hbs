@@ -1,0 +1,13 @@
+{{#each post}}
+<div class="tag">
+    <div class="row">
+                <h2 class="column-detail"># {{this.post_id}}</h2 class="column-detail">
+                <h2 class="column-detail">Date: {{this.post_datetime}}</h2 class="column-detail">
+                <h2 class="column-detail">Content: {{this.post_content}}</h2 class="column-detail">
+                <h2 class="column-detail">Media: {{this.post_media}}</h2 class="column-detail">
+                <h2 class="column-detail">Comments: {{this.comment_count}}</h2 class="column-detail">
+                <h2 class="column-detail">Reacts: {{this.react_count}}</h2 class="column-detail">
+                <h2 class="column-detail">Writer: {{this.writer_id}}</h2 class="column-detail">
+    </div>
+</div>
+{{/each}}

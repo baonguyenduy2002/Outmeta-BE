@@ -1,0 +1,23 @@
+{{#each newData}}
+<div class="row">
+    <h1> Update Form </h1>
+    <form method="POST" action="/group/{{this.group_id}}?_method=PUT">
+        <div class="mb-3">
+            <label for="group_name" class="form-label">Group name</label>
+            <input type="text" name="group_name" class="form-control" value="{{this.group_name}}" id="group_name" aria-describedby="name">
+        </div>
+
+        <div class="mb-3">
+            <label for="group_description" class="form-label">Description</label>
+            <input type="text" name="group_description" class="form-control" value="{{this.group_description}}" id="group_description" aria-describedby="password">
+        </div>
+
+        <div class="mb-3">
+            <label for="manager_id" class="form-label">Manager</label>
+            <input type="text" name="manager_id" class="form-control" value="{{this.manager_id}}" id="manager_id" aria-describedby="description">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{{/each}}

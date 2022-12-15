@@ -1,0 +1,37 @@
+<h1>GROUP INFORMATION</h1>
+<div class="button" style="display: flex; margin: 10px;">
+    <a style="text-decoration: none" href="/group/insert" class="btn btn-link">Insert</a>
+</div>
+<form action="/group" method="POST" class="d-flex" role="search" style="margin: 10px;">
+    <input name="search" id="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+</form>
+<div class="tag">
+<div class="row">
+{{#each group}}
+            <div class="profile" style="width: 18rem">
+                <div class="card-body">
+                    <a style="text-decoration: none" class="row" href="/group/{{this.group_id}}">
+                        <div class="column" style="background-color:#aaa;"># {{this.group_id}}</div>
+                        <div class="column" style="background-color:#bbb;">Name: {{this.group_name}}</div>
+                        <div class="column" style="background-color:#ccc;">Contact: {{this.member_count}}</div>
+                    </a>
+                </div>
+
+                <div class="row-button">
+                    <div class="button">
+                        <a style="text-decoration: none" href="/group/{{this.group_id}}/update" class="btn btn-link">Update</a>
+                    </div>
+                    <div class="button">
+                        <form method="POST" action="/group/{{this.group_id}}/?_method=DELETE">
+                            <button style="text-decoration: none" type="submit" class="btn btn-link">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+{{/each}}
+</div>
+</div>
+
+
+

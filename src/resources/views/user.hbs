@@ -1,0 +1,43 @@
+<h1>USER INFORMATION</h1>
+<div class="button" style="display: flex; margin: 10px;">
+    <a style="text-decoration: none" href="/user/insert" class="btn btn-link">Insert</a>
+</div>
+<form action="/user/follow" method="POST" class="d-flex" role="search" style="margin: 10px;">
+    <input name="user_id" id="user_id" class="form-control me-2" type="search" placeholder="User 1" aria-label="Search">
+    <a> ====> </a>
+    <input name="follower_id" id="follower_id" class="form-control me-2" type="search" placeholder="User 2" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Follow</button>
+</form>
+<form action="/user" method="POST" class="d-flex" role="search" style="margin: 10px;">
+    <input name="search" id="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+</form>
+<div class="tag">
+<div class="row">
+{{#each user}}
+            <div class="profile" style="width: 18rem">
+                <div class="card-body">
+                    <a style="text-decoration: none" class="row" href="/user/{{this.user_id}}">
+                        <div class="column" style="background-color:#aaa;"># {{this.user_id}}</div>
+                        <div class="column" style="background-color:#bbb;">Name: {{this.name}}</div>
+                        <div class="column" style="background-color:#ccc;">Contact: {{this.phone_number}}</div>
+                    </a>
+                </div>
+
+                <div class="row-button">
+                    <div class="button">
+                        <a style="text-decoration: none" href="/user/{{this.user_id}}/update" class="btn btn-link">Update</a>
+                    </div>
+                    <div class="button">
+                        <form method="POST" action="/user/{{this.user_id}}/?_method=DELETE">
+                            <button style="text-decoration: none" type="submit" class="btn btn-link">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+{{/each}}
+</div>
+</div>
+
+
+

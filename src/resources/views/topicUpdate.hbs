@@ -1,0 +1,12 @@
+{{#each newData}}
+<div class="row">
+    <h1> Update Form </h1>
+    <form method="POST" action="/topic/{{this.topic_id}}?_method=PUT">
+        <div class="mb-3">
+            <label for="topic_title" class="form-label">Title</label>
+            <input type="text" name="topic_title" class="form-control" value="{{this.topic_title}}" id="topic_title" aria-describedby="name">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{{/each}}

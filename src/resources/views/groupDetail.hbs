@@ -1,0 +1,11 @@
+{{#each group}}
+<div class="tag">
+    <div class="row">
+                <h2 class="column-detail"># {{this.group_id}}</h2 class="column-detail">
+                <h2 class="column-detail">Name: {{this.group_name}}</h2 class="column-detail">
+                <h2 class="column-detail">Description: {{this.group_description}}</h2 class="column-detail">
+                <h2 class="column-detail">Members: {{this.member_count}}</h2 class="column-detail">
+                <h2 class="column-detail">Manager: {{this.manager_id}}</h2 class="column-detail">
+    </div>
+</div>
+{{/each}}

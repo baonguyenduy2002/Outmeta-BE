@@ -1,0 +1,18 @@
+{{#each newData}}
+<div class="row">
+    <h1> Update Form </h1>
+    <form method="POST" action="/post/{{this.post_id}}?_method=PUT">
+        <div class="mb-3">
+            <label for="post_content" class="form-label">Content</label>
+            <input type="text" name="post_content" class="form-control" value="{{this.post_content}}" id="post_content" aria-describedby="name">
+        </div>
+
+        <div class="mb-3">
+            <label for="post_media" class="form-label">Media</label>
+            <input type="text" name="post_media" class="form-control" value="{{this.post_media}}" id="post_media" aria-describedby="password">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{{/each}}

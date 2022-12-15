@@ -1,0 +1,15 @@
+{{#each user}}
+<div class="tag">
+    <div class="row">
+                <h2 class="column-detail">Account: {{this.user_id}}</h2 class="column-detail">
+                <h2 class="column-detail">Password: {{this.password}}</h2 class="column-detail">
+                <h2 class="column-detail">Name: {{this.name}}</h2 class="column-detail">
+                <h2 class="column-detail">Followers: {{this.follower_count}}</h2 class="column-detail">
+                <h2 class="column-detail">Date of birth: {{this.dob}}</h2 class="column-detail">
+                <h2 class="column-detail">Email: {{this.email}}</h2 class="column-detail">
+                <h2 class="column-detail">Address: {{this.address}}</h2 class="column-detail">
+                <h2 class="column-detail">Contact: {{this.phone_number}}</h2 class="column-detail">
+                <h2 class="column-detail">Description: {{this.description}}</h2 class="column-detail">
+    </div>
+</div>
+{{/each}}

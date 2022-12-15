@@ -1,0 +1,42 @@
+{{#each newData}}
+<div class="row">
+    <h1> Update Form </h1>
+    <form method="POST" action="/user/{{this.user_id}}?_method=PUT">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" name="name" class="form-control" value="{{this.name}}" id="name" aria-describedby="name">
+        </div>
+
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="text" name="password" class="form-control" value="{{this.password}}" id="password" aria-describedby="password">
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <input type="text" name="description" class="form-control" value="{{this.description}}" id="description" aria-describedby="description">
+        </div>
+
+        <div class="mb-3">
+            <label for="address" class="form-label">Address</label>
+            <input type="text" name="address" class="form-control" value="{{this.address}}" id="address" aria-describedby="address">
+        </div>
+        <div class="mb-3">
+            <label for="dob" class="form-label">Dob</label>
+            <input type="date" name="dob" class="form-control" value="{{this.dob}}" id="dob" aria-describedby="dob">
+        </div>
+
+        <div class="mb-3">
+            <label for="phone_number" class="form-label">Phone number</label>
+            <input type="text" name="phone_number" class="form-control" value="{{this.phone_number}}" id="phone_number" aria-describedby="phone_number">
+        </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" name="email" class="form-control" value="{{this.email}}" id="email" aria-describedby="email">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{{/each}}
