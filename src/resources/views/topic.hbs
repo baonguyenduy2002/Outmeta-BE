@@ -2,6 +2,10 @@
 <div class="button" style="display: flex; margin: 10px;">
     <a style="text-decoration: none" href="/topic/insert" class="btn btn-link">Insert</a>
 </div>
+<form action="/topic/posts" method="POST" class="d-flex" role="search" style="margin: 10px;">
+    <input name="followid" id="followid" class="form-control me-2" type="search" placeholder="Input topic ID" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Get posts</button>
+</form>
 <form action="/topic" method="POST" class="d-flex" role="search" style="margin: 10px;">
     <input name="search" id="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
     <button class="btn btn-outline-success" type="submit">Search</button>

@@ -55,6 +55,56 @@ class UserController {
     });
   }
 
+  showfollowers(req, res) {
+    User.showfollowers(req.body.followid, (error, response) => {
+      if (error) {
+        console.log(error);
+        return;
+      }
+      res.render("userFollower", { user: response[0] });
+    });
+  }
+
+  showfollowings(req, res) {
+    User.showfollowing(req.body.followid, (error, response) => {
+      if (error) {
+        console.log(error);
+        return;
+      }
+      res.render("userFollower", { user: response[0] });
+    });
+  }
+
+  showgroups(req, res) {
+    User.showgroups(req.body.followid, (error, response) => {
+      if (error) {
+        console.log(error);
+        return;
+      }
+      res.render("userGroups", { group: response[0] });
+    });
+  }
+
+  showposts(req, res) {
+    User.showposts(req.body.followid, (error, response) => {
+      if (error) {
+        console.log(error);
+        return;
+      }
+      res.render("userPosts", { post: response[0] });
+    });
+  }
+
+  showtopics(req, res) {
+    User.showtopics(req.body.followid, (error, response) => {
+      if (error) {
+        console.log(error);
+        return;
+      }
+      res.render("userTopics", { topic: response[0] });
+    });
+  }
+
   updateView(req, res) {
     let newData;
     User.getOne(req.params.user_id, (error, response) => {

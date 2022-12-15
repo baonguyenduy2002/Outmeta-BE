@@ -93,4 +93,15 @@ Group.delete = (group_id, result) => {
   );
 };
 
+Group.showposts = (group_id, result) => {
+  sql.query(`CALL outmeta.view_post_group("${group_id}")`, (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(err, null);
+      return;
+    }
+    result(null, res);
+  });
+};
+
 module.exports = Group;

@@ -56,6 +56,16 @@ class TopicController {
     });
   }
 
+  showposts(req, res) {
+    Topic.showposts(req.body.followid, (error, response) => {
+      if (error) {
+        console.log(error);
+        return;
+      }
+      res.render("topicPosts", { post: response[0] });
+    });
+  }
+
   updateView(req, res) {
     let newData;
     Topic.getOne(req.params.topic_id, (error, response) => {

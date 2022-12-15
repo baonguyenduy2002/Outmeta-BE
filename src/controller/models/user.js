@@ -104,4 +104,59 @@ User.create = (newUser, result) => {
   });
 };
 
+User.showfollowers = (user_id, result) => {
+  sql.query(`CALL outmeta.get_follower("${user_id}")`, (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(err, null);
+      return;
+    }
+    result(null, res);
+  });
+};
+
+User.showfollowing = (user_id, result) => {
+  sql.query(`CALL outmeta.get_following("${user_id}")`, (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(err, null);
+      return;
+    }
+    result(null, res);
+  });
+};
+
+User.showgroups = (user_id, result) => {
+  sql.query(`CALL outmeta.view_group_user("${user_id}")`, (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(err, null);
+      return;
+    }
+    result(null, res);
+  });
+};
+
+User.showtopics = (user_id, result) => {
+  sql.query(`CALL outmeta.get_topics("${user_id}")`, (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(err, null);
+      return;
+    }
+    result(null, res);
+  });
+};
+
+User.showposts = (user_id, result) => {
+  sql.query(`CALL outmeta.view_post_user("${user_id}")`, (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(err, null);
+      return;
+    }
+    result(null, res);
+  });
+};
+
 module.exports = User;

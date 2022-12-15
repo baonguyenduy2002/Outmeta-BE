@@ -88,4 +88,15 @@ Topic.delete = (topic_id, result) => {
   });
 };
 
+Topic.showposts = (topic_id, result) => {
+  sql.query(`CALL outmeta.view_post_topic("${topic_id}")`, (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(err, null);
+      return;
+    }
+    result(null, res);
+  });
+};
+
 module.exports = Topic;

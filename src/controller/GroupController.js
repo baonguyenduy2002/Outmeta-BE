@@ -57,6 +57,16 @@ class GroupController {
     });
   }
 
+  showposts(req, res) {
+    Group.showposts(req.body.followid, (error, response) => {
+      if (error) {
+        console.log(error);
+        return;
+      }
+      res.render("groupPosts", { post: response[0] });
+    });
+  }
+
   updateView(req, res) {
     let newData;
     Group.getOne(req.params.group_id, (error, response) => {

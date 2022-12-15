@@ -8,6 +8,7 @@ router.put("/:topic_id", topicController.update);
 router.post("/store", topicController.store);
 router.get("/insert", topicController.add);
 router.delete("/:topic_id", topicController.remove);
+router.post("/posts", topicController.showposts);
 router.get("/:topic_id", topicController.show);
 router.post("/", topicController.indexsearch);
 router.get("/", topicController.index);
