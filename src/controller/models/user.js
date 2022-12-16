@@ -53,7 +53,7 @@ User.create = (newUser, result) => {
 
 User.update = (user_id, newData, result) => {
   sql.query(
-    `UPDATE user SET ? WHERE user_id = ${user_id}`,
+    `UPDATE user SET ? WHERE user_id = "${user_id}"`,
     newData,
     (err, res) => {
       if (err) {
