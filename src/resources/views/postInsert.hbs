@@ -1,7 +1,7 @@
 <div class="row">
     <form action="/post/store" method="POST">
         <div class="mb-3">
-            <label for="post_id" class="form-label">Id</label>
+            <label for="post_id" class="form-label">Id (Don't input if you want auto id setting, when you input id, group post and topic post will be unavailable)</label>
             <input type="text" name="post_id" class="form-control" id="post_id" aria-describedby="post_id">
         </div>
 
@@ -16,8 +16,18 @@
         </div>
 
         <div class="mb-3">
-            <label for="post_datetime" class="form-label">Dob</label>
+            <label for="post_datetime" class="form-label">Date</label>
             <input type="date" name="post_datetime" class="form-control" id="post_datetime" aria-describedby="dob">
+        </div>
+
+        <div class="mb-3">
+            <label for="post_datetime" class="form-label">Topic ID (if there is)</label>
+            <input type="text" name="topic_id" class="form-control" id="topic_id" aria-describedby="dob">
+        </div>
+
+        <div class="mb-3">
+            <label for="post_datetime" class="form-label">Group ID (if there is)</label>
+            <input type="text" name="group_id" class="form-control" id="group_id" aria-describedby="dob">
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>

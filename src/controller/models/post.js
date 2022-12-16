@@ -65,6 +65,52 @@ Post.create = (newPost, result) => {
   });
 };
 
+Post.add_personalpost = (newPersonalPost, result) => {
+  sql.query(
+    `INSERT INTO outmeta.personal_post VALUES(LAST_INSERT_ID(), ${newPersonalPost.writer_id})`,
+    (err, res) => {
+      if (err) {
+        console.log("error: ", err);
+        result(err, null);
+        return;
+      }
+      console.log("Added personal post", { newPersonalPost });
+      result(null, { newPersonalPost });
+    }
+  );
+};
+
+Post.add_grouppost = (newGroupPost, result) => {
+  sql.query(
+    `INSERT INTO outmeta.group_post VALUES(LAST_INSERT_ID(), ${newGroupPost.group_id})`,
+    (err, res) => {
+      if (err) {
+        console.log("error: ", err);
+        result(err, null);
+        return;
+      }
+      console.log("Added group post", { newGroupPost });
+      result(null, { newGroupPost });
+    }
+  );
+};
+
+Post.add_topicpost = (newTopicPost, result) => {
+  sql.query(
+    `INSERT INTO outmeta.group_post SET ?`,
+    newTopicPost,
+    (err, res) => {
+      if (err) {
+        console.log("error: ", err);
+        result(err, null);
+        return;
+      }
+      console.log("Added group post", { newTopicPost });
+      result(null, { newTopicPost });
+    }
+  );
+};
+
 Post.update = (post_id, newData, result) => {
   sql.query(
     `UPDATE post SET ? WHERE post_id = ${post_id}`,

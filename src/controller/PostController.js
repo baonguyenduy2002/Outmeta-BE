@@ -29,7 +29,13 @@ class PostController {
   }
 
   store(req, res) {
-    let data = req.body;
+    // let data = req.body;
+    let data = {
+      // post_id: req.body.post_id,
+      post_content: req.body.post_content,
+      post_media: req.body.post_media,
+      post_datetime: req.body.post_datetime,
+    };
     data.comment_count = 0;
     data.react_count = 0;
     data.writer_id = "wmaccartney23567";
@@ -39,6 +45,43 @@ class PostController {
         return;
       }
     });
+
+    Post.add_personalpost(
+      { post_id: data.post_id, writer_id: data.writer_id },
+      (error, response) => {
+        if (error) {
+          console.log(error);
+          return;
+        }
+      }
+    );
+
+    data = req.body;
+
+    if (data.group_id) {
+      Post.add_grouppost(
+        { post_id: data.post_id, group_id: data.group_id },
+        (error, response) => {
+          if (error) {
+            console.log(error);
+            return;
+          }
+        }
+      );
+    }
+
+    if (data.topic_id) {
+      Post.add_topicpost(
+        { post_id: data.post_id, topic_id: data.topic_id },
+        (error, response) => {
+          if (error) {
+            console.log(error);
+            return;
+          }
+        }
+      );
+    }
+
     Post.getAll(null, (error, response) => {
       if (error) {
         console.log(error);
