@@ -1,0 +1,46 @@
+h1 {
+  color: blue;
+  text-align: center; }
+
+.row {
+  padding: 10px;
+  justify-content: center;
+  background-color: lightblue;
+  display: flex;
+  flex-wrap: wrap; }
+
+.profile {
+  width: 300px;
+  margin: 5px; }
+
+.row-button {
+  width: 200px;
+  height: 40px;
+  display: flex;
+  flex-direction: row; }
+
+.column {
+  color: black;
+  height: fit-content;
+  width: fit-content;
+  padding: 10px; }
+
+.column-detail {
+  color: black;
+  height: fit-content;
+  width: fit-content;
+  padding: 10px; }
+
+.button {
+  display: inline-block;
+  height: fit-content;
+  width: fit-content;
+  border-style: solid;
+  color: #444;
+  border: 1px solid #CCC;
+  background: #DDD;
+  box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  vertical-align: middle;
+  padding: 5px;
+  text-align: center; }
